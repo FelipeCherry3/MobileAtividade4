@@ -1,5 +1,6 @@
 package com.facens.att4mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ import retrofit2.Callback;
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText raInput, nomeInput, cepInput, logradouroInput, complementoInput, bairroInput, cidadeInput, ufInput;
-    private Button buscarCepButton, salvarButton;
+    private Button buscarCepButton, salvarButton, btnLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         buscarCepButton = findViewById(R.id.buscarCepButton);
         salvarButton = findViewById(R.id.salvarButton);
+        btnLista = findViewById(R.id.btnLista);
 
         buscarCepButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,11 @@ public class CadastroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 salvarAluno();
             }
+        });
+
+        btnLista.setOnClickListener(v -> {
+            Intent intent = new Intent(CadastroActivity.this, ListagemActivity.class);
+            startActivity(intent);
         });
     }
 
