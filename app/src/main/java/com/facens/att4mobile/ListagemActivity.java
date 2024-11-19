@@ -68,5 +68,4 @@ public class ListagemActivity extends AppCompatActivity {
             }
         });
     }
-    }
 }
